@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cal Gonzales | Data Portfolio</title>
+    <link rel="icon" href="img/ico.png" type="image/png">
 
     <!-- SWIPER CSS -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -12,44 +13,45 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- LOGO ANIM CSS -->
     <style>
-        #overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: #fbfcfe;
-          z-index: 1000;
-          display: none;
-        }
-        #video {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1001; /* Ensure the video is on top of the overlay */
+
+        body{
+            overflow: hidden;
         }
         .main-content {
-            display: none;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
         }
-        html, body {
-          width: 100%;
-          overflow: hidden;
+        .main-content.show {
+        opacity: 1;
+        }
+        #video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1001; /* Ensure the video is on top of the overlay */
         }
     </style>
+
+    <!-- SCROLL TO TOP ONLOAD -->
+    <script>
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+        window.onload = function() {
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
 
 </head>
 
 <body>
-<div class="main-content">
-    <div id="overlay"></div>
     <video id="video" autoplay muted>
         <source src="img/cal-logo-anim.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
+<div class="main-content">
     <!-- HEADER -->
     <header class="header" id="header">
         <nav class="nav container">
@@ -92,13 +94,6 @@
                 <i class="fas fa-times nav-close" id="nav-close"></i>
             </div>
 
-            <!-- Theme change button -->
-<!--             <div class="nav-btns">
-                <i class="fas fa-moon change-theme" id="theme-button"></i>
-                <div class="nav-toggle" id="nav-toggle">
-                    <i class="fas fa-qrcode"></i>
-                </div>
-            </div> -->
         </nav>
     </header>
 
@@ -109,10 +104,10 @@
             <div class="home-container container grid">
                 <div class="home-content grid">
                     <div class="home-social">
-                        <a href="https://www.linkedin.com/ncalgonzales" target="_blank" class="home-social-icon">
+                        <a href="https://www.linkedin.com/in/ncalgonzales" target="_blank" class="home-social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/calgonzales/" target="_blank" class="home-social-icon">
+                        <a href="https://github.com/calgonzales" target="_blank" class="home-social-icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://behance.net/calgonzales" target="_blank" class="home-social-icon">
@@ -120,23 +115,20 @@
                         </a>
                     </div>
                     <div class="home-img">
-                        <svg class="home-blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                        <svg class="home-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                <path d="M100 0
+                                         A94 94 0 1 1 99.9999 0" />
                             </mask>
                             <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                                <image class="home-blob-img" x='12' y='18' xlink:href="img/perfil.png" />
+                                <path d="M100 0
+                                         A94 94 0 1 1 99.9999 0" />
+                                <image class="home-blob-img" x='12' y='18' xlink:href="img/me.png" />
                             </g>
                         </svg>
                     </div>
+
                     <div class="home-data">
                         <h1 class="home-data-title">Hi, I'm <span class="cal-text">Cal</span>.</h1>
                         <h3 class="home-data-subtitle">Data Analyst</h3>
@@ -167,7 +159,7 @@
 
                 <div class="about-container-data">
                     <p class="about-container-data-description">I was looking for ways to apply my passion on data analysis, finance, math & programming to real-life questions,
-                    & I came upon data analytics/science. That made me want to upskill my career with data profession in the field of finance & accounting.</p>
+                    & I came upon data analytics/science.</p>
 <!--                     <div class="about-container-data-info">
                         <div>
                             <span class="about-container-data-info-title">69+</span>
@@ -183,8 +175,8 @@
                         </div>
                     </div> -->
                     <div class="about-buttons">
-                        <a download="" href="pdf/cal-Cv.pdf" class="button button-flex">
-                            Download CV <i class="fas fa-download button-icon"></i>
+                        <a download="" href="pdf/CV-Nathaniel-Carlo-Gonzales.pdf" class="button button-flex">
+                            Download CV (outdated) <i class="fas fa-download button-icon"></i>
                         </a>
                     </div>
                 </div>
@@ -193,7 +185,7 @@
 
         <!-- QUALIFICATION -->
         <section class="qualification section" id="qualification">
-            <h2 class="section-title">Qualification</h2>
+            <h2 class="section-title">Qualifications</h2>
             <span class="section-subtitle">My personal journey</span>
 
             <div class="qualification-container container">
@@ -310,6 +302,24 @@
                                 <!-- <span class="qualification-line"></span> -->
                             </div>
                         </div>
+                        <!-- WORK 4 -->
+                        <div class="qualification-data-2">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification-rounder"></span>
+                                <span class="qualification-dotted-line"></span>
+                            </div>
+
+                            <div class="qualification-data-alt">
+                                <h3 class="qualification-title">Freelance Graphic Designer</h3>
+                                <span class="qualification-subtitle">Part-time Hobby</span>
+                                <div class="qualification-calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    2010 - Present
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -379,19 +389,19 @@
                             <div class="services-modal-services grid">
                                 <li class="services-modal-service">
                                     <i class="far fa-check-circle services-modal-icon"></i>
-                                    <p>I develop the user interface.</p>
+                                    <p>[0]</p>
                                 </li>
                                 <li class="services-modal-service">
                                     <i class="far fa-check-circle services-modal-icon"></i>
-                                    <p>Web page development.</p>
+                                    <p>[1]</p>
                                 </li>
                                 <li class="services-modal-service">
                                     <i class="far fa-check-circle services-modal-icon"></i>
-                                    <p>I create ux element interactions.</p>
+                                    <p>[2]</p>
                                 </li>
                                 <li class="services-modal-service">
                                     <i class="far fa-check-circle services-modal-icon"></i>
-                                    <p>I position your company brand.</p>
+                                    <p>[3]</p>
                                 </li>
                             </div>
                         </div>
@@ -452,7 +462,7 @@
                         <div class="portfolio-data">
                             <h3 class="portfolio-title">Inventory Data Analysis</h3>
                             <p class="portfolio-description">Improved inventory efficiency through data analysis, optimizing forecasting, and reducing excess stock, resulting in enhanced cost-effectiveness.</p>
-                            <a href="#" class="button button-flex button-small portfolio-button">
+                            <a href="https://github.com/calgonzales/Inventory-Management-Data-Analysis/" class="button button-flex button-small portfolio-button" target="_blank">
                                 Demo <i class="fas fa-arrow-right button-icon"></i>
                             </a>
                         </div>
@@ -461,8 +471,8 @@
                     <div class="portfolio-content grid swiper-slide">
                         <img src="img/portfolio2.jpg" alt="Portfolio" class="portfolio-img">
                         <div class="portfolio-data">
-                            <h3 class="portfolio-title">Di ko pa alam ilalagay dito</h3>
-                            <p class="portfolio-description">hahahaha</p>
+                            <h3 class="portfolio-title">Power BI</h3>
+                            <p class="portfolio-description">Data visualization.</p>
                             <a href="#" class="button button-flex button-small portfolio-button">
                                 Demo <i class="fas fa-arrow-right button-icon"></i>
                             </a>
@@ -561,7 +571,7 @@
                         <a href="#contact" class="footer-link">Contact Me</a>
                     </li>
                 </ul>
-                <div class="footer-socials">
+                <!-- <div class="footer-socials">
                     <a href="https://www.facebook.com/" target="_blank">
                         <i class="fab fa-facebook-f footer-social"></i>
                     </a>
@@ -571,36 +581,37 @@
                     <a href="https://www.instagram.com/" target="_blank">
                         <i class="fab fa-instagram footer-social"></i>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
 </div>
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- LOGO ANIM JS -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          var overlay = document.getElementById("overlay");
-          var video = document.getElementById("video");
-
-          overlay.style.display = "block";
-          video.style.display = "block";
-
-          video.addEventListener("ended", function() {
-            overlay.style.display = "none";
+        var video = document.getElementById("video");
+        video.style.display = "block";
+        video.addEventListener("ended", function() {
             video.style.display = "none";
             document.documentElement.style.overflow = "visible";
             document.body.style.overflow = "visible";
-          });
-        });
-    </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                document.querySelector('.main-content').style.display = 'block';
-            }, 1);
-        });
+            document.querySelector('.main-content').classList.add('show'); // show gradually main-content
+
+            const sr = ScrollReveal({ // scroll reveal
+                origin: 'top',
+                distance: '30px',
+                duration: 400,
+                delay: 200,
+            });
+            sr.reveal('.home-data, .abilities-subtitle', {}); 
+            sr.reveal('.about-subtitle, .about-text, .abilities-img, .about-container-imgAlt, .about-container-data', {delay: 200}); // delay: 400
+            sr.reveal('.home-img, .home-social-icon, .about-container-data, .abilities-data, .work-img, .qualification-data, .skills-content, .contact-information', {interval: 100}); // don't mess with .skills-content
+            sr.reveal('.nav-item', {interval: 100});
+            
+      });
     </script>
 
     <!-- SCROLL TOP -->
@@ -614,18 +625,8 @@
     <!-- SWIPER JS -->
     <script src="js/swiper-bundle.js"></script>
 
-    <!-- SCROLL REVEAL -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
     <!-- MAIN JS -->
-    <script>
-      setTimeout(function() {
-        var script = document.createElement('script');
-        script.src = 'js/main.js';
-        document.head.appendChild(script);
-      }, 3100); // 2.4 seconds in milliseconds
-    </script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
 
 </body>
 

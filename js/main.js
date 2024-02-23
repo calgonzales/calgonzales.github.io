@@ -151,17 +151,3 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '30px',
-    duration: 400,
-    delay: 200,
-//     reset: true
-});
-
-sr.reveal('.home-data, .abilities-subtitle', {}); 
-sr.reveal('.about-subtitle, .about-text, .abilities-img, .about-container-imgAlt, .about-container-data', {delay: 200}); // delay: 400
-sr.reveal('.home-img, .home-social-icon, .about-container-data, .abilities-data, .work-img, .qualification-data, .skills-content, .contact-information', {interval: 100}); // don't mess with .skills-content
-sr.reveal('.nav-item', {interval: 100});
-

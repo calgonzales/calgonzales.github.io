@@ -46,7 +46,6 @@
   --z-tooltip: 99;
   --z-fixed: 999;
   --z-modal: 9999;
-  /* Dark theme */
 }
 
 /* Font size for large devices */
@@ -100,23 +99,6 @@ a {
 img {
   max-width: 100%;
   height: auto;
-}
-
-/* Button Dark/Light */
-.nav-btns {
-  display: flex;
-  align-items: center;
-}
-
-.nav-btns .change-theme {
-  font-size: 1.25rem;
-  color: var(--title-color);
-  margin-right: var(--mb-1);
-  cursor: pointer;
-}
-
-.nav-btns .change-theme:hover {
-  color: var(--first-color);
 }
 
 /* REUSABLE CSS CLASSES */
@@ -548,7 +530,7 @@ img {
 }
 
 .services-container .services-content:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
 }
 
 .services-container .services-content .services-icon {
@@ -911,10 +893,12 @@ img {
     left: 50%; /* Center horizontally on mobile */
     transform: translateX(-50%) scale(0.7); /* Center the element using a translate transformation */
   }
-  .home-data{
+  .home-data{ /* Center horizontally the home-data*/
     margin: 0 auto;
   }
-
+  #video{
+    width: 90%; /* Adjust the width for smaller screens */
+  }
   .container {
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
