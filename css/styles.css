@@ -954,6 +954,9 @@ img {
   .home-data{
     margin: 0 auto;
   }
+  #video{
+    width: 90%; /* Adjust the width for smaller screens */
+  }
   .cal-logo {
     top: 11px;
     left: 50%; /* Center horizontally on mobile */
